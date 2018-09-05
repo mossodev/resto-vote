@@ -24,12 +24,12 @@ class Restaurant
     /**
      * @ORM\Column(type="string", length=191)
      */
-    private $phone;
+    private $address;
 
     /**
      * @ORM\Column(type="string", length=191)
      */
-    private $address;
+    private $phone;
 
     public function getId()
     {
@@ -48,18 +48,6 @@ class Restaurant
         return $this;
     }
 
-    public function getPhone(): ?string
-    {
-        return $this->phone;
-    }
-
-    public function setPhone(string $phone): self
-    {
-        $this->phone = $phone;
-
-        return $this;
-    }
-
     public function getAddress(): ?string
     {
         return $this->address;
@@ -68,6 +56,18 @@ class Restaurant
     public function setAddress(string $address): self
     {
         $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }

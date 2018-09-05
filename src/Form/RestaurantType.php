@@ -13,8 +13,8 @@ class RestaurantType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('phone')
             ->add('address')
+            ->add('phone')
         ;
     }
 

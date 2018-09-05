@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7687a3143d9b71231601321360b82669",
+    "content-hash": "5797faba47f62e41363816f2d79d9562",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2849,6 +2849,55 @@
             "time": "2018-04-26T10:06:28+00:00"
         },
         {
+            "name": "symfony/process",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "1d1677391ecf00d1c5b9482d6050c0c27aa3ac3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/1d1677391ecf00d1c5b9482d6050c0c27aa3ac3a",
+                "reference": "1d1677391ecf00d1c5b9482d6050c0c27aa3ac3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-05-31T10:17:53+00:00"
+        },
+        {
             "name": "symfony/property-access",
             "version": "v4.1.1",
             "source": {
@@ -3437,6 +3486,65 @@
             "time": "2018-06-19T21:38:16+00:00"
         },
         {
+            "name": "symfony/web-server-bundle",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/web-server-bundle.git",
+                "reference": "d8f9acbb98e8ce8c45aabe9b695615bed0e77fb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/d8f9acbb98e8ce8c45aabe9b695615bed0e77fb4",
+                "reference": "d8f9acbb98e8ce8c45aabe9b695615bed0e77fb4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/console": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/http-kernel": "~3.4|~4.0",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/process": "^3.4.2|^4.0.2"
+            },
+            "suggest": {
+                "symfony/expression-language": "For using the filter option of the log server.",
+                "symfony/monolog-bridge": "For using the log server."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\WebServerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony WebServerBundle",
+            "homepage": "https://symfony.com",
+            "time": "2018-05-07T07:14:12+00:00"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v4.1.1",
             "source": {
@@ -3726,114 +3834,6 @@
                 "environment"
             ],
             "time": "2018-05-30T07:26:09+00:00"
-        },
-        {
-            "name": "symfony/process",
-            "version": "v4.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/process.git",
-                "reference": "1d1677391ecf00d1c5b9482d6050c0c27aa3ac3a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/1d1677391ecf00d1c5b9482d6050c0c27aa3ac3a",
-                "reference": "1d1677391ecf00d1c5b9482d6050c0c27aa3ac3a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Process\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Process Component",
-            "homepage": "https://symfony.com",
-            "time": "2018-05-31T10:17:53+00:00"
-        },
-        {
-            "name": "symfony/web-server-bundle",
-            "version": "v4.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/web-server-bundle.git",
-                "reference": "d8f9acbb98e8ce8c45aabe9b695615bed0e77fb4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/web-server-bundle/zipball/d8f9acbb98e8ce8c45aabe9b695615bed0e77fb4",
-                "reference": "d8f9acbb98e8ce8c45aabe9b695615bed0e77fb4",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/config": "~3.4|~4.0",
-                "symfony/console": "~3.4|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/http-kernel": "~3.4|~4.0",
-                "symfony/polyfill-ctype": "~1.8",
-                "symfony/process": "^3.4.2|^4.0.2"
-            },
-            "suggest": {
-                "symfony/expression-language": "For using the filter option of the log server.",
-                "symfony/monolog-bridge": "For using the log server."
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Bundle\\WebServerBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony WebServerBundle",
-            "homepage": "https://symfony.com",
-            "time": "2018-05-07T07:14:12+00:00"
         }
     ],
     "aliases": [],

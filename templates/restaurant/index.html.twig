@@ -10,8 +10,8 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Phone</th>
                 <th>Address</th>
+                <th>Phone</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,8 +20,8 @@
             <tr>
                 <td>{{ restaurant.id }}</td>
                 <td>{{ restaurant.name }}</td>
-                <td>{{ restaurant.phone }}</td>
                 <td>{{ restaurant.address }}</td>
+                <td>{{ restaurant.phone }}</td>
                 <td>
                     <a href="{{ path('restaurant_show', {'id': restaurant.id}) }}">show</a>
                     <a href="{{ path('restaurant_edit', {'id': restaurant.id}) }}">edit</a>
