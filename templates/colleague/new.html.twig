@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Colleague{% endblock %}
+
+{% block body %}
+    <h1>Create new Colleague</h1>
+
+    {{ include('colleague/_form.html.twig') }}
+
+    <a href="{{ path('colleague_index') }}">back to list</a>
+{% endblock %}
