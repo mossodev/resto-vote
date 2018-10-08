@@ -5,41 +5,31 @@ namespace App\Controller;
 use App\Entity\Restaurant;
 use App\Form\RestaurantType;
 use App\Repository\RestaurantRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\Annotations as Rest;
 
-/**
- * @Route("/restaurant")
- */
-class RestaurantController extends Controller
+class RestaurantController extends FOSRestController
 {
     /**
-     * @Route("/", name="restaurant_index", methods="GET")
+     * @Rest\Get(
+     * path = "/restaurant",
+     * name = "liste_restaurant")
      */
-    public function getRestaurantsAction(RestaurantRepository $restaurantRepository): Response
+    public function getRestaurantsAction(RestaurantRepository $restaurantRepository)
     {
         $restaurants = $restaurantRepository->findAll();
-        $_restaurant = [];
-        $_restaurants = [];
-        foreach ($restaurants as $restaurant) {
-            $_restaurant['name'] = $restaurant->getName();
-            $_restaurant['address'] = $restaurant->getAddress();
-            $_restaurant['phone'] = $restaurant->getPhone();
-            $_restaurant['id'] = $restaurant->getId();
-            $_restaurants[] = $_restaurant;
-        }
 
-        return new JsonResponse($_restaurants, 200);
-        // return $this->render('restaurant/index.html.twig', ['restaurants' => ]);
+        return $this->view(['data' => $restaurants], 200);
     }
 
     /**
-     * @Route("/", name="restaurant_new", methods="POST")
+     * @Rest\Post(
+     * path = "/restaurant",
+     * name = "add_restaurant")
      */
-    public function postRestaurantAction(Request $request): Response
+    public function postRestaurantAction(Request $request)
     {
         $restaurant = new Restaurant();
         $body = $request->getContent();
@@ -58,26 +48,25 @@ class RestaurantController extends Controller
         $em->persist($restaurant);
         $em->flush();
 
-        return $this->redirectToRoute('restaurant_index');
+        return $this->redirectToRoute('liste_restaurant');
     }
 
     /**
-     * @Route("/{id}", name="restaurant_show", methods="GET")
+     * @Rest\Get(
+     * path = "/restaurant/{id}",
+     * name = "show_restaurant")
      */
-    public function getRestaurantAction(Restaurant $restaurant): Response
+    public function getRestaurantAction(Restaurant $restaurant)
     {
-        $_restaurant['name'] = $restaurant->getName();
-        $_restaurant['address'] = $restaurant->getAddress();
-        $_restaurant['phone'] = $restaurant->getPhone();
-        $_restaurant['id'] = $restaurant->getId();
-
-        return new JsonResponse($_restaurant, 200);
+        return $this->view(['data' => $restaurant], 200);
     }
 
     /**
-     * @Route("/{id}", name="restaurant_edit", methods="PUT|POST")
+     * @Rest\Put(
+     * path = "/restaurant/{id}",
+     * name = "add_restaurant")
      */
-    public function putRestaurantAction(Request $request, Restaurant $restaurant): Response
+    public function putRestaurantAction(Request $request, Restaurant $restaurant)
     {
         $body = $request->getContent();
         $data = json_decode($body, true);
@@ -94,18 +83,20 @@ class RestaurantController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->flush();
 
-        return $this->redirectToRoute('restaurant_index');
+        return $this->view(['data' => $restaurant], 200);
     }
 
     /**
-     * @Route("/{id}", name="restaurant_delete", methods="DELETE")
+     * @Rest\Delete(
+     * path = "/restaurant/{id}",
+     * name = "add_restaurant")
      */
-    public function deleteRestaurantAction(Request $request, Restaurant $restaurant): Response
+    public function deleteRestaurantAction(Request $request, Restaurant $restaurant)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($restaurant);
         $em->flush();
 
-        return $this->redirectToRoute('restaurant_index');
+        return new JsonResponse(['message' => 'L\'objet a été supprimer avec succès'], 200);
     }
 }
