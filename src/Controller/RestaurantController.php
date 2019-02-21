@@ -89,7 +89,7 @@ class RestaurantController extends FOSRestController
     /**
      * @Rest\Delete(
      * path = "/restaurant/{id}",
-     * name = "add_restaurant")
+     * name = "remove_restaurant")
      */
     public function deleteRestaurantAction(Request $request, Restaurant $restaurant)
     {

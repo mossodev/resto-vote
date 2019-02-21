@@ -2,7 +2,7 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "~7.1.0",
+        "php": "~7.2.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "friendsofsymfony/rest-bundle": "2.4.0",
@@ -17,6 +17,7 @@
         "symfony/security-csrf": "^4.1",
         "symfony/serializer": "^4.1",
         "symfony/serializer-pack": "^1.0",
+        "symfony/translation": "^4.1",
         "symfony/twig-bundle": "^4.1",
         "symfony/validator": "^4.1",
         "symfony/web-server-bundle": "^4.1",
